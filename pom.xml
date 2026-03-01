@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.6</version>
+		<version>4.0.3</version>
 		<relativePath/>
 	</parent>
-	<groupId>com.unisangil.backend</groupId>
-	<artifactId>appsalud</artifactId>
-	<version>0.0.1-alpha</version>
-	<name>appsalud</name>
-	<description>Project backend for AppSaludComunitaria</description>
+	<groupId>com.sisla.backend</groupId>
+	<artifactId>trout</artifactId>
+	<version>0.0.1</version>
+	<name>trout</name>
+	<description>Project backend for trout</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -75,13 +75,13 @@
         <dependency>
             <groupId>com.nimbusds</groupId>
             <artifactId>nimbus-jose-jwt</artifactId>
-            <version>10.5</version>
+            <version>10.8</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.json/json -->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20250517</version>
+			<version>20251224</version>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
@@ -91,7 +91,7 @@
         <dependency>
             <groupId>com.twilio.sdk</groupId>
             <artifactId>twilio</artifactId>
-            <version>11.0.1</version>
+            <version>11.3.4</version>
         </dependency>
 	</dependencies>
 	<build>
