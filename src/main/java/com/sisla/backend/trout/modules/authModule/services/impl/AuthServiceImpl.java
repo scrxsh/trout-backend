@@ -70,10 +70,13 @@ public class AuthServiceImpl implements IAuthService {
             user.setPassword(encoder.encode(user.getPassword()));
             userRepository.save(user);
 
+            /*
             String status = twilioOTPService.enviarOTP(user.getPhoneNumber());
             System.out.println("OTP enviado con estado: " + status);
 
-            response.setMsj("OTP enviado a su teléfono. Esperando verificación!!!");
+            response.setMsj("OTP enviado a su teléfono. Esperando verificación!!!");*/
+
+            response.setMsj("Exitoso!!!");
 
             return response;
 
@@ -82,7 +85,7 @@ public class AuthServiceImpl implements IAuthService {
         }
     }
 
-    public ResponseDTO verificarOTP(String phoneNumber, String codigo) {
+    /*public ResponseDTO verificarOTP(String phoneNumber, String codigo) {
         ResponseDTO response = new ResponseDTO();
 
         String status = twilioOTPService.verifiyOTP(phoneNumber, codigo);
@@ -92,7 +95,7 @@ public class AuthServiceImpl implements IAuthService {
             if (user.isPresent()) {
                 user.get().setVerified(true);
                 userRepository.save(user.get());
-                response.setMsj("Verificación completada exitosamente ✅");
+                response.setMsj("Verificación completada exitosamente");
             } else {
                 response.setNumOfErrors(1);
                 response.setMsj("Usuario no encontrado");
@@ -103,8 +106,7 @@ public class AuthServiceImpl implements IAuthService {
         }
 
         return response;
-    }
-
+    }*/
 
     private boolean verifiyPassword(String enteredPassword, String storedPassword){
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();

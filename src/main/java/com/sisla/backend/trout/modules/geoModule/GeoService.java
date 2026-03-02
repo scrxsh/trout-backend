@@ -12,6 +12,7 @@ public class GeoService {
 
     private  final WebClient httpClient = WebClient.builder()
             .baseUrl("https://nominatim.openstreetmap.org")
+            .defaultHeader("User-Agent", "MiAppTrout/1.0 (unisangil)")
             .build();
 
     public JSONObject buscar(String query) throws IOException {
@@ -20,6 +21,7 @@ public class GeoService {
                         .path("/search")
                         .queryParam("format", "json")
                         .queryParam("q", query)
+                        .queryParam("limit", 1)
                         .build())
                 .retrieve()
                 .bodyToMono(String.class)
