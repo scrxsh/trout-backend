@@ -33,14 +33,14 @@ public class SecurityConfig {
                 )
                 .cors(cors -> cors.configurationSource(request -> {
                 var corsConfig = new CorsConfiguration();
-                corsConfig.setAllowedOrigins(List.of("http://127.0.0.1:5500", "http://localhost:4200"));
+                corsConfig.setAllowedOrigins(List.of( "http://localhost:4200"));
                 corsConfig.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                 corsConfig.setAllowedHeaders(List.of("Origin", "Content-Type", "Accept", "Authorization"));
                 corsConfig.setAllowCredentials(false);
                 return corsConfig;}))
                 .authorizeHttpRequests(authRequest ->
                         authRequest
-                                .requestMatchers("/api/v1/auth/**").permitAll()
+                                .requestMatchers("/api/v1/**").permitAll()
                                 .requestMatchers(AUTH_WHITELIST).permitAll()
                                 .anyRequest().authenticated()
                 )
