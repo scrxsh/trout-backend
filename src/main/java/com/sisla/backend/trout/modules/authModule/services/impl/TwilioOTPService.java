@@ -1,12 +1,17 @@
 package com.sisla.backend.trout.modules.authModule.services.impl;
 
-import com.twilio.Twilio;
-import com.twilio.rest.verify.v2.service.Verification;
-import com.twilio.rest.verify.v2.service.VerificationCheck;
+
 import org.springframework.stereotype.Service;
 
 @Service
 public class TwilioOTPService {
+
+    /*
+    import com.twilio.Twilio;
+    import com.twilio.rest.verify.v2.service.Verification;
+    import com.twilio.rest.verify.v2.service.VerificationCheck;
+
+    //INHABILITACION TEMPORAL DE ESTE MODULO
 
     private static final String SERVICE_SID = "VAc2e9789a5452fee289644e577f07099b";
 
@@ -34,4 +39,5 @@ public class TwilioOTPService {
 
         return verificationCheck.getStatus();
     }
+    */
 }
